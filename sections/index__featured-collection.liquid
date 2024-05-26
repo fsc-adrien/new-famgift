@@ -1,5 +1,5 @@
 {% comment %}
-** Single featured collection **
+  ** Single featured collection **
 {% endcomment %}
 
 {% liquid
@@ -70,7 +70,7 @@
 
 <section
   class="
-    section
+    section section-feature--collection
     {{ section.settings.css_class }}
     is-width-{{ section.settings.width }}
     {% if section.settings.show_gutter == false %}
@@ -80,20 +80,37 @@
       has-gutter-enabled
     {% endif %}
   "
-  {% if section.settings.animation != "none" %}
+  {% if section.settings.animation != 'none' %}
     data-scroll-class="{{ section.settings.animation }}"
   {% endif %}
 >
   {% if title != blank %}
     <div class="container">
-      {%
-        render 'heading',
-        title: title,
-        heading_tag: 'h2',
-        context: 'featured-collection',
-        text_alignment: 'center',
-        url: collection.url,
-      %}
+      <header class="Section__header">
+        <h4>{{ title }}</h4>
+        {% if section.settings.button_label != blank %}
+          <div
+            class="
+              featured-collection__button-container
+              one-whole
+              column
+            "
+          >
+            <a
+              class="
+                featured-collection__button
+                button
+                {{ section.settings.button_style }}
+              "
+              {% if section_onboarding == false %}
+                href="{{ collection.url }}"
+              {% endif %}
+            >
+              {{- section.settings.button_label | escape -}}
+            </a>
+          </div>
+        {% endif %}
+      </header>
     </div>
   {% endif %}
 
@@ -111,8 +128,7 @@
     {% if section_onboarding == false %}
       {% comment %} Loop through products {% endcomment %}
       {% if collection_layout == 'slider' and collection.all_products_count > 0 %}
-        {%
-          render 'product-slider',
+        {% render 'product-slider',
           view: 'desktop',
           additional_classes: desktop_slider_classes,
           limit: section.settings.products_limit,
@@ -123,27 +139,25 @@
           align_height: section.settings.align_height,
           height: section.settings.collection_height,
           show_gutter: section.settings.show_gutter,
-          featured_collection: section.settings.collection,
+          featured_collection: section.settings.collection
         %}
       {% elsif collection.all_products_count > 0 %}
         <div class="container {{ desktop_slider_classes }}">
-          {%
-            render 'product-loop',
+          {% render 'product-loop',
             limit: section.settings.products_limit,
             products: collection.products,
             skip_product: product,
             products_per_row: section.settings.products_per,
             mobile_products_per_row: section.settings.mobile_products_per_row,
             align_height: section.settings.align_height,
-            height: section.settings.collection_height,
+            height: section.settings.collection_height
           %}
         </div>
       {% endif %}
 
       {% if collection_layouts_vary %}
         {% if collection_layout_mobile == 'slider' and collection.all_products_count > 0 %}
-          {%
-            render 'product-slider',
+          {% render 'product-slider',
             view: 'mobile',
             additional_classes: 'is-hidden-desktop-only',
             limit: section.settings.products_limit,
@@ -154,19 +168,18 @@
             align_height: section.settings.align_height,
             height: section.settings.collection_height,
             show_gutter: section.settings.show_gutter,
-            featured_collection: section.settings.collection,
+            featured_collection: section.settings.collection
           %}
         {% elsif collection_layout_mobile == 'grid' and collection.all_products_count > 0 %}
           <div class="container is-hidden-desktop-only">
-            {%
-              render 'product-loop',
+            {% render 'product-loop',
               limit: section.settings.products_limit,
               products: collection.products,
               skip_product: product,
               products_per_row: section.settings.products_per,
               mobile_products_per_row: section.settings.mobile_products_per_row,
               align_height: section.settings.align_height,
-              height: section.settings.collection_height,
+              height: section.settings.collection_height
             %}
           </div>
         {% endif %}
@@ -192,29 +205,6 @@
         </div>
       {% endfor %}
     {% endif %}
-
-    {% if section.settings.button_label != blank %}
-      <div
-        class="
-          featured-collection__button-container
-          one-whole
-          column
-        "
-      >
-        <a
-          class="
-            featured-collection__button
-            button
-            {{ section.settings.button_style }}
-          "
-          {% if section_onboarding == false %}
-            href="{{ collection.url }}"
-          {% endif %}
-        >
-          {{- section.settings.button_label | escape -}}
-        </a>
-      </div>
-    {% endif %}
   </div>
 </section>
 
@@ -236,265 +226,263 @@
 <script data-theme-editor-load-script src="{{ 'z__jsFeaturedCollection.js' | asset_url }}"></script>
 
 {% schema %}
-  {
-    "name": "Featured collection",
-    "class": "featured-collection-section jsFeaturedCollection",
-    "settings": [
-      {
-        "type": "text",
-        "id": "title",
-        "label": "Heading",
-        "default": "Featured collection"
-      },
-      {
-        "type": "collection",
-        "id": "collection",
-        "label": "Collection"
-      },
-      {
-        "type": "header",
-        "content": "Product"
-      },
-      {
-        "type": "range",
-        "id": "products_per",
-        "label": "Products per row",
-        "min": 2,
-        "max": 7,
-        "default": 5
-      },
-      {
-        "type": "range",
-        "id": "products_limit",
-        "label": "Maximum products to show",
-        "min": 3,
-        "max": 50,
-        "default": 10
-      },
-      {
-        "type": "checkbox",
-        "id": "align_height",
-        "label": "Align to height"
-      },
-      {
-        "type": "range",
-        "id": "collection_height",
-        "label": "Product image height",
-        "min": 150,
-        "max": 400,
-        "step": 10,
-        "default": 200,
-        "unit": "px",
-        "info": "Applied when 'Align to height' is enabled. [Learn more](https://help.outofthesandbox.com/hc/en-us/articles/360022543913)"
-      },
-      {
-        "type": "header",
-        "content": "Call to action"
-      },
-      {
-        "type": "text",
-        "id": "button_label",
-        "label": "Button label"
-      },
-      {
-        "type": "select",
-        "id": "button_style",
-        "label": "Button style",
-        "options": [
-          {
-            "value": "button--primary",
-            "label": "Primary"
-          },
-          {
-            "value": "button--secondary",
-            "label": "Secondary"
-          },
-          {
-            "value": "button--link-style",
-            "label": "Link style"
-          }
-        ],
-        "default": "button--primary"
-      },
-      {
-        "type": "header",
-        "content": "Layout"
-      },
-      {
-        "type": "radio",
-        "id": "collection_style",
-        "label": "Collection layout",
-        "default": "grid",
-        "options": [
-          {
-            "value": "slider",
-            "label": "Slider"
-          },
-          {
-            "value": "grid",
-            "label": "Grid"
-          }
-        ],
-        "default": "grid"
-      },
-      {
-        "type": "select",
-        "id": "width",
-        "label": "Width",
-        "default": "wide",
-        "options": [
-          {
-            "value": "standard",
-            "label": "Standard"
-          },
-          {
-            "value": "wide",
-            "label": "Wide"
-          }
-        ]
-      },
-      {
-        "type": "checkbox",
-        "id": "show_gutter",
-        "label": "Show gutter",
-        "default": true
-      },
-      {
-        "type": "range",
-        "id": "padding_top",
-        "label": "Top spacing",
-        "min": 0,
-        "max": 80,
-        "default": 20,
-        "unit": "px"
-      },
-      {
-        "type": "range",
-        "id": "padding_bottom",
-        "label": "Bottom spacing",
-        "min": 0,
-        "max": 80,
-        "default": 20,
-        "unit": "px"
-      },
-      {
-        "type": "select",
-        "id": "animation",
-        "label": "Animation",
-        "default": "none",
-        "options": [
-          {
-            "value": "none",
-            "label": "None"
-          },
-          {
-            "value": "fadeIn",
-            "label": "Fade in"
-          },
-          {
-            "value": "fadeInDown",
-            "label": "Fade in down"
-          },
-          {
-            "value": "fadeInLeft",
-            "label": "Fade in left"
-          },
-          {
-            "value": "fadeInRight",
-            "label": "Fade in right"
-          },
-          {
-            "value": "slideInLeft",
-            "label": "Slide in left"
-          },
-          {
-            "value": "slideInRight",
-            "label": "Slide in right"
-          }
-        ]
-      },
-      {
-        "type": "header",
-        "content": "Mobile layout"
-      },
-      {
-        "type": "radio",
-        "id": "collection_layout_mobile",
-        "label": "Mobile collection layout",
-        "options": [
-          {
-            "value": "slider",
-            "label": "Slider"
-          },
-          {
-            "value": "grid",
-            "label": "Grid"
-          }
-        ],
-        "default": "grid"
-      },
-      {
-        "type": "select",
-        "id": "mobile_products_per_row",
-        "label": "Products per row on mobile",
-        "info": "Applied only when 'Collection layout' is set to 'Grid'.",
-        "options": [
-          {
-            "value": "1",
-            "label": "1"
-          },
-          {
-            "value": "2",
-            "label": "2"
-          }
-        ],
-        "default": "1"
-      },
-      {
-        "type": "range",
-        "id": "padding_top_mobile",
-        "label": "Mobile top spacing",
-        "min": 0,
-        "max": 80,
-        "default": 20,
-        "unit": "px"
-      },
-      {
-        "type": "range",
-        "id": "padding_bottom_mobile",
-        "label": "Mobile bottom spacing",
-        "min": 0,
-        "max": 80,
-        "default": 20,
-        "unit": "px"
-      },
-      {
-        "type": "header",
-        "content": "Advanced",
-        "info": "[Learn more](https://help.outofthesandbox.com/hc/en-us/articles/360022329373)"
-      },
-      {
-        "type": "text",
-        "id": "css_class",
-        "label": "CSS Class"
-      },
-      {
-        "type": "textarea",
-        "id": "custom_css",
-        "label": "Custom CSS"
-      }
-    ],
-    "presets": [{
+{
+  "name": "Featured collection",
+  "class": "featured-collection-section jsFeaturedCollection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Featured collection"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "header",
+      "content": "Product"
+    },
+    {
+      "type": "range",
+      "id": "products_per",
+      "label": "Products per row",
+      "min": 2,
+      "max": 7,
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "products_limit",
+      "label": "Maximum products to show",
+      "min": 3,
+      "max": 50,
+      "default": 10
+    },
+    {
+      "type": "checkbox",
+      "id": "align_height",
+      "label": "Align to height"
+    },
+    {
+      "type": "range",
+      "id": "collection_height",
+      "label": "Product image height",
+      "min": 150,
+      "max": 400,
+      "step": 10,
+      "default": 200,
+      "unit": "px",
+      "info": "Applied when 'Align to height' is enabled. [Learn more](https://help.outofthesandbox.com/hc/en-us/articles/360022543913)"
+    },
+    {
+      "type": "header",
+      "content": "Call to action"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "options": [
+        {
+          "value": "button--primary",
+          "label": "Primary"
+        },
+        {
+          "value": "button--secondary",
+          "label": "Secondary"
+        },
+        {
+          "value": "button--link-style",
+          "label": "Link style"
+        }
+      ],
+      "default": "button--primary"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "radio",
+      "id": "collection_style",
+      "label": "Collection layout",
+      "default": "grid",
+      "options": [
+        {
+          "value": "slider",
+          "label": "Slider"
+        },
+        {
+          "value": "grid",
+          "label": "Grid"
+        }
+      ],
+      "default": "grid"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Width",
+      "default": "wide",
+      "options": [
+        {
+          "value": "standard",
+          "label": "Standard"
+        },
+        {
+          "value": "wide",
+          "label": "Wide"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_gutter",
+      "label": "Show gutter",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top spacing",
+      "min": 0,
+      "max": 80,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom spacing",
+      "min": 0,
+      "max": 80,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "animation",
+      "label": "Animation",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "fadeIn",
+          "label": "Fade in"
+        },
+        {
+          "value": "fadeInDown",
+          "label": "Fade in down"
+        },
+        {
+          "value": "fadeInLeft",
+          "label": "Fade in left"
+        },
+        {
+          "value": "fadeInRight",
+          "label": "Fade in right"
+        },
+        {
+          "value": "slideInLeft",
+          "label": "Slide in left"
+        },
+        {
+          "value": "slideInRight",
+          "label": "Slide in right"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "radio",
+      "id": "collection_layout_mobile",
+      "label": "Mobile collection layout",
+      "options": [
+        {
+          "value": "slider",
+          "label": "Slider"
+        },
+        {
+          "value": "grid",
+          "label": "Grid"
+        }
+      ],
+      "default": "grid"
+    },
+    {
+      "type": "select",
+      "id": "mobile_products_per_row",
+      "label": "Products per row on mobile",
+      "info": "Applied only when 'Collection layout' is set to 'Grid'.",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Mobile top spacing",
+      "min": 0,
+      "max": 80,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Mobile bottom spacing",
+      "min": 0,
+      "max": 80,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Advanced",
+      "info": "[Learn more](https://help.outofthesandbox.com/hc/en-us/articles/360022329373)"
+    },
+    {
+      "type": "text",
+      "id": "css_class",
+      "label": "CSS Class"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_css",
+      "label": "Custom CSS"
+    }
+  ],
+  "presets": [
+    {
       "name": "Featured collection",
       "category": "Collection",
-      "settings": {
-
-      }
-    }],
-    "disabled_on": {
-      "groups": [
-        "*"
-      ]
+      "settings": {}
     }
+  ],
+  "disabled_on": {
+    "groups": ["*"]
   }
+}
 {% endschema %}

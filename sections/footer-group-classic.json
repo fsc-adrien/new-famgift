@@ -9,28 +9,32 @@
           "type": "text",
           "settings": {
             "icon": "leaf",
-            "text": "100% Organic"
+            "text": "100% Organic",
+            "link": ""
           }
         },
         "text_2": {
           "type": "text",
           "settings": {
             "icon": "bunny",
-            "text": "Cruelty free"
+            "text": "Cruelty free",
+            "link": ""
           }
         },
         "text_3": {
           "type": "text",
           "settings": {
             "icon": "chat",
-            "text": "24\/7 support"
+            "text": "24\/7 support",
+            "link": ""
           }
         },
         "text_4": {
           "type": "text",
           "settings": {
             "icon": "truck",
-            "text": "Free shipping"
+            "text": "Free shipping",
+            "link": ""
           }
         }
       },
@@ -40,35 +44,46 @@
         "text_3",
         "text_4"
       ],
+      "disabled": true,
       "settings": {
+        "show_icon_bar": true,
+        "icon_position": "row",
+        "alignment": "center",
+        "mobile_alignment": "none",
+        "size": "medium",
+        "background": "#8B8B8B",
+        "link_color": "#ffffff",
+        "link_hover_color": "#000000",
+        "text_color": "#ffffff",
+        "width": "standard",
+        "css_class": "",
+        "custom_css": ""
       }
     },
     "footer": {
       "type": "footer-classic",
       "blocks": {
-        "logo": {
-          "type": "logo",
-          "settings": {
-          }
-        },
         "link_list": {
           "type": "link_list",
           "settings": {
-            "menu": "main-menu"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
+            "menu": "footer-menu",
+            "social_icons_footer": true
           }
         }
       },
       "block_order": [
-        "logo",
-        "link_list",
-        "text"
+        "link_list"
       ],
       "settings": {
+        "copyright_text": "",
+        "display_designed_by": false,
+        "display_shopify": false,
+        "show_follow_on_shop": false,
+        "show_locale_selector": true,
+        "show_currency_selector": true,
+        "display_payment_methods": false,
+        "css_class": "",
+        "custom_css": ""
       }
     }
   },

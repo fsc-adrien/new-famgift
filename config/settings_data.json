@@ -1,9 +1,46 @@
 {
   "current": {
+    "link_color": "#007ace",
+    "link_hover_color": "#ca2f3c",
     "header_background": "rgba(0,0,0,0)",
     "header_link_color": "#1f2c41",
+    "header_link_hover_color": "#ca2f3c",
+    "dropdown_background": "#fefaf6",
+    "dropdown_link_hover_color": "#ca2f3c",
+    "footer_background": "#ffffff",
+    "footer_link_color": "#1f2c41",
+    "footer_link_hover_color": "#ca2f3c",
+    "footer_text_color": "#1f2c41",
+    "regular__font": "poppins_n4",
+    "logo__font": "poppins_n4",
+    "nav__font": "poppins_n4",
+    "button__font": "poppins_n4",
+    "heading__font": "poppins_n7",
+    "preheading_font": "poppins_n6",
+    "subheading_font": "poppins_n6",
+    "banner_heading__font": "poppins_n7",
+    "banner_text__font": "poppins_n4",
+    "mobile_menu_background_color": "#FFFFFF",
+    "mobile_menu_link_color": "#1f2c41",
+    "mobile_menu_link_hover_color": "#ca2f3c",
+    "display_heading_divider": false,
+    "heading_divider_style": "vertical",
+    "show_secondary_image": true,
+    "thumbnail_hover_enabled": false,
+    "thumbnail_text_alignment": "left",
+    "stickers_enabled": true,
+    "enable_quickshop": false,
+    "cart_icon": "bag",
     "content_for_index": [
 
-    ]
+    ],
+    "blocks": {
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
   }
 }

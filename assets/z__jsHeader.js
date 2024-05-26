@@ -39,10 +39,14 @@ window.PXUTheme.jsHeader = {
       window.PXUTheme.jsMegaMenu.init($section);
     }
 
-    if(!isScreenSizeLarge()) {
-      this.unload();
-      window.PXUTheme.mobileMenu.init();
-    }
+    // !isScreenSizeLarge()
+    // if($(window).width() <= 1024) {
+    //   this.unload();
+    //   window.PXUTheme.mobileMenu.init();
+    // }
+    this.unload();
+    window.PXUTheme.mobileMenu.init();
+
 
     $('.search-overlay__close').on('click', function(){
       window.PXUTheme.jsHeader.hideSearch();

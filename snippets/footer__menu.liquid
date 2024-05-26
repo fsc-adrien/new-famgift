@@ -1,31 +1,106 @@
 {% comment %}
-Required values
-menu_link: linklist
-______________
-Optional values
-linklist_class: <string>
-link_setting: <string>
+  Required values
+  menu_link: linklist
+  ______________
+  Optional values
+  linklist_class: <string>
+  link_setting: <string>
 {% endcomment %}
 
 <div class="footer__menu is-justify-space-between {{ linklist_class }}">
-{% if menu_link != blank %}
-  {% assign menu = linklists[menu_link] %}
-  <p class="footer__heading">
-    {% if link_setting != blank %}<a href="{{ link_setting }}">{% endif %}
-      {{ menu.title }}
-    {% if link_setting != blank %}</a>{% endif %}
-  </p>
-  <ul>
-    {% for link in menu.links %}
-      <li class="footer__menu-link">
-        <a href="{{ link.url }}" class="{% if link.active %}is-active{% endif %}">
-          {{ link.title }}
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
-{% else %}
-  <p class="footer__heading">{{ 'homepage.onboarding.menu_title' | t }}</p>
-  <p>{{ 'homepage.onboarding.no_content' | t }}</p>
-{% endif %}
+  {% if menu_link != blank %}
+    {% assign menu = linklists[menu_link] %}
+    {% comment %}
+      <p class="footer__heading">
+        {% if link_setting != blank %}<a href="{{ link_setting }}">{% endif %}
+          {{ menu.title }}
+        {% if link_setting != blank %}</a>{% endif %}
+      </p>
+    {% endcomment %}
+    <ul class="footer__menu-container">
+      {% for link in menu.links %}
+        <li class="footer__menu-link">
+          <a href="{{ link.url }}" class="footer__menu-link--heading">
+            {{ link.title }}
+          </a>
+          {% if link.links %}
+            <ul class="footer__menu-sub--container">
+              {% for sub_link in link.links %}
+                <li>
+                  <a href="{{ sub_link.url }}" class="footer__menu-link--sub">
+                    {{ sub_link.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    <div class="footer__menu-social">
+      <div class="footer--social">
+        <div class="footer__item ">
+          <a
+            href="https://www.facebook.com/familygiftsco"
+            target="_blank"
+            class="footer__link"
+          >
+            <svg viewBox="0 0 20 20" class="icon" width="1em" height="1em">
+              <use xlink:href="#facebook"></use>
+            </svg>
+          </a>
+        </div>
+
+        <div class="footer__item ">
+          <a
+            href="https://www.instagram.com/familygiftscoshop/"
+            target="_blank"
+            class="footer__link"
+          >
+            <svg viewBox="0 0 20 20" class="icon" width="1em" height="1em">
+              <use xlink:href="#instagram"></use>
+            </svg>
+          </a>
+        </div>
+
+        <div class="footer__item level-1">
+          <a
+            href="https://www.youtube.com/channel/UCo1ACWvzAE9QuasuPL6oJQg"
+            target="_blank"
+            class="footer__link"
+          >
+            <svg viewBox="0 0 20 20" class="icon" width="1em" height="1em">
+              <use xlink:href="#youtube"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div
+        class="
+          sub-footer__row
+          sub-footer__row--second
+        "
+      >
+        <div class="footer__credits small-down--one-whole">
+          <p>&copy; {{ "now" | date: "%Y" }} {{ shop.name | link_to: routes.root_url }}.</p>
+          {{ section.settings.copyright_text }}
+          {%- if section.settings.display_designed_by -%}
+            <p>{{ 'layout.general.designer_credits_html' | t }}</p>
+          {%- endif -%}
+          {%- if section.settings.display_shopify -%}
+            <p>{{ powered_by_link }}</p>
+          {%- endif -%}
+        </div>
+
+        {% comment %} {{ footer_right_column }} {% endcomment %}
+
+        {%- if show_follow_on_shop and right_column_item_count == 0 -%}
+          {{ shop | login_button: action: 'follow' }}
+        {%- endif -%}
+      </div>
+    </div>
+  {% else %}
+    <p class="footer__heading">{{ 'homepage.onboarding.menu_title' | t }}</p>
+    <p>{{ 'homepage.onboarding.no_content' | t }}</p>
+  {% endif %}
 </div>

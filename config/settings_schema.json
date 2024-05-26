@@ -78,7 +78,7 @@
         "type": "color",
         "id": "link_hover_color",
         "label": "Links hover",
-        "default": "#51B2F5"
+        "default": "#CA2F3C"
       },
       {
         "type": "header",
@@ -128,7 +128,7 @@
         "type": "color",
         "id": "header_link_hover_color",
         "label": "Links hover",
-        "default": "#51B2F5"
+        "default": "#CA2F3C"
       },
       {
         "type": "color",
@@ -179,7 +179,7 @@
         "type": "color",
         "id": "dropdown_link_hover_color",
         "label": "Links hover",
-        "default": "#007ACE"
+        "default": "#CA2F3C"
       },
       {
         "type": "header",

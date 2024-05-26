@@ -61,10 +61,40 @@
     },
     "header": {
       "type": "header-classic",
+      "blocks": {
+        "menu_tout_cwPTiJ": {
+          "type": "menu-tout",
+          "settings": {
+            "menu_item": "Wall Art",
+            "image": "shopify:\/\/shop_images\/Bitmap_copy_8fad7f7d-4544-4987-a243-07aab1b13537.jpg",
+            "title": "Best Sellers",
+            "intro": "<p>A brief two-liner about Best Sellers could go in this space right here. Keep it short and sweet.<\/p>",
+            "link": "shopify:\/\/collections\/hot-sellers",
+            "button_label": "Shop Best Sellers"
+          }
+        },
+        "menu_tout_9nPgfM": {
+          "type": "menu-tout",
+          "settings": {
+            "menu_item": "Gifts",
+            "image": "shopify:\/\/shop_images\/Ad_-_Best_Friends_Mock_Up_1600x_08e73be6-37be-45ee-bdb7-61341265eb5a.jpg",
+            "title": "Gifts",
+            "intro": "",
+            "link": "shopify:\/\/collections\/gifts",
+            "button_label": "Shop Gifts"
+          }
+        }
+      },
+      "block_order": [
+        "menu_tout_cwPTiJ",
+        "menu_tout_9nPgfM"
+      ],
       "settings": {
         "logo": "shopify:\/\/shop_images\/FamilyGiftsCo.svg",
-        "logo_width": 225,
+        "logo_width": 275,
         "main_linklist": "main-menu-2020",
+        "menu_bestsellers": "best-sellers-for-mobile",
+        "menu_quicklinks": "",
         "menu_alignment": "start",
         "dropdown_click": false,
         "display_search": true,
@@ -79,7 +109,7 @@
         "enable_sticky": false,
         "sticky_background_opacity": 50,
         "scroll_logo_width": 80,
-        "width": "wide",
+        "width": "standard",
         "vertical_alignment": "center",
         "css_class": "",
         "custom_css": ""
@@ -99,7 +129,7 @@
           "type": "featured_promo",
           "settings": {
             "richtext": "<p>Add description and links to your promotion<\/p>",
-            "bgr_color": "#EEEEEE",
+            "bgr_color": "#eeeeee",
             "text_color": "#000000",
             "button_label": "Shop now",
             "promo_link": "",
