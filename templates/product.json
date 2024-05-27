@@ -2,12 +2,23 @@
   "sections": {
     "breadcrumbs": {
       "type": "product__breadcrumb",
+      "disabled": true,
       "settings": {
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "css_class": "",
+        "custom_css": ""
       }
     },
     "sidebar": {
       "type": "product__sidebar",
+      "disabled": true,
       "settings": {
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "css_class": "",
+        "custom_css": ""
       }
     },
     "main": {
@@ -21,15 +32,18 @@
         "price": {
           "type": "price",
           "settings": {
-          }
-        },
-        "description": {
-          "type": "description",
-          "settings": {
+            "display_savings": false
           }
         },
         "form": {
           "type": "form",
+          "settings": {
+            "show_payment_button": false,
+            "show_gift_card_recipient_form": false
+          }
+        },
+        "description": {
+          "type": "description",
           "settings": {
           }
         },
@@ -42,17 +56,49 @@
       "block_order": [
         "title",
         "price",
-        "description",
         "form",
+        "description",
         "share"
       ],
       "settings": {
+        "product_images_position": "left",
+        "set_product_height": false,
+        "product_height": 500,
+        "video_looping": false,
+        "gallery_arrows": false,
+        "enable_zoom": false,
+        "enable_product_lightbox": false,
+        "slideshow_speed": 0,
+        "slideshow_transition": "slide",
+        "display_thumbnails": true,
+        "thumbnail_position": "bottom-thumbnails",
+        "enable_thumbnail_slider": true,
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
       }
     },
     "recommendations": {
       "type": "product__recommendations",
       "settings": {
-        "show_product_recommendations": true
+        "show_product_recommendations": true,
+        "product_recommendations_style": "grid",
+        "product_recommendations_heading": "You may also like",
+        "products_per": 3,
+        "recommended_products_limit": 6,
+        "align_height": false,
+        "collection_height": 200,
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "css_class": "",
+        "custom_css": ""
       }
     }
   },

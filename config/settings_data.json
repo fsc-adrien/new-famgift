@@ -28,7 +28,12 @@
     "show_secondary_image": true,
     "thumbnail_hover_enabled": false,
     "thumbnail_text_alignment": "left",
-    "stickers_enabled": true,
+    "stickers_enabled": false,
+    "display_product_quantity": true,
+    "product_form_style": "dropdown",
+    "enable_swatches": false,
+    "swatch_style": "square",
+    "swatches_option_style": "color_swatch",
     "enable_quickshop": false,
     "cart_icon": "bag",
     "content_for_index": [

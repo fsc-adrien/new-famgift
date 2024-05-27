@@ -1,0 +1,112 @@
+$color-ui-navy: #1f2c41;
+$color-ui-red: #de0d37;
+
+.breadcrumb {
+    ul {
+        gap: 8px;
+        font-size: 12px;
+
+        li {
+            display: flex;
+            gap: 6px;
+            a {
+                color: #1f2c41;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .js-product_section {
+        gap: 50px;
+        .one-half {
+            width: 550px
+        }
+
+        .product__images {
+            flex: 1;
+            width: 100%
+        }
+
+        .product-block--first .product-title {
+            font-size: 3rem;
+            margin: 30px 0;
+        }
+    }
+
+    .product-gallery__main {
+        .flickity-viewport {
+            height: auto !important;
+        }
+
+        .flickity-slider {
+            position: static;
+            transform: none !important;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+
+            .product-gallery__image {
+                position: static !important;
+                visibility: visible !important;
+
+                &:first-child {
+                    grid-column: span 2;
+                }
+            }
+        }
+
+        .product-gallery__thumbnails {
+            display: none;
+        }
+    }
+}
+
+.js-product_section {
+    .product-block--first .product-title {
+        color: $color-ui-navy
+    }
+    
+    .price-ui {
+        margin-top: 30px;
+        
+        shopify-payment-terms {
+            display: none;
+        }
+
+        .money {
+            font-size: 26px;
+            font-weight: 500;
+            color: $color-ui-navy
+        }
+    }
+
+    .product-form-container {
+        padding-top: 40px;
+    }
+
+    #cl_optionsapp .customily_option select {
+        min-height: 58px;
+    }
+
+    .quantity-box {
+        .control.minus-control,
+        .control.plus-control {
+            display: none;
+        }
+
+        .quantity-element {
+            min-height: 58px;
+        }
+    }
+
+    .purchase-details{
+        flex-direction: column;
+        
+        &.has-quantity-box-true .purchase-details__spb--false {
+            max-width: 100%;
+            width: 100%;
+            height: 58px;
+        }
+    }
+}
