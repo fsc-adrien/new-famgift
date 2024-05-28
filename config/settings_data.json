@@ -36,6 +36,16 @@
     "swatches_option_style": "color_swatch",
     "enable_quickshop": false,
     "cart_icon": "bag",
+    "pt_show_refine": false,
+    "pt_show_collection_count": false,
+    "pt_show_inactive_filters": true,
+    "sections": {
+      "filter-menu-settings": {
+        "type": "filter-menu-settings",
+        "settings": {
+        }
+      }
+    },
     "content_for_index": [
 
     ],

@@ -11,10 +11,28 @@
   <meta name="robots" content="index,follow">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="{{ settings.shop_bg_color }}">
+  <meta name="google-site-verification" content="1KA58mqGE3PSYu7LQXHGRm1Y6asJXGHP-xqyPYrezrU" />
+
   <link rel="canonical" href="{{ canonical_url }}">
 
   {%- if current_tags -%}{%- assign meta_tags = current_tags | join: ', ' -%}{%- endif -%}
   <title>{%- if template.name == "index" -%}{{ page_title }}{%- else -%}{{ page_title }}{% if current_tags %} {{ 'general.meta.tagged_html' | t: tags: meta_tags }}{%- endif -%}{% if current_page != 1 %} {{ 'general.meta.page' | t: page_number: current_page }}{% endif %}{% unless page_title contains shop.name %} - {{ shop.name }}{% endunless %}{% endif %}</title>
+  
+    <!-- anti-flicker snippet (recommended)  -->
+  <style>.async-hide { opacity: 0 !important} </style>
+  <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+  h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+  (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+  })(window,document.documentElement,'async-hide','dataLayer',4000,
+  {'GTM-MM6HTM2':true});</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-743365762"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'AW-743365762');
+  </script>
 
   <!-- DNS prefetches -->
   <link rel="dns-prefetch" href="https://cdn.shopify.com">
@@ -40,6 +58,26 @@
   <link rel="preload" href="{{ 'vendors.js' | asset_url }}" as="script">
   <link rel="preload" href="{{ 'utilities.js' | asset_url }}" as="script">
   <link rel="preload" href="{{ 'app.js' | asset_url }}" as="script">
+
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "gjwtv1mo72");
+  </script>
+
+  {{ shop.metafields.loox["global_html_head"] }}
+
+  <!-- Clarity -->
+  <script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "ikhs1psz0s");
+  </script>
+
 
   {% if settings.show_multiple_currencies or shop.enabled_currencies.size > 1 or localization.available_countries.size > 1 %}
     <link rel="preload" href="/services/javascripts/currencies.js" as="script">
@@ -152,6 +190,10 @@
     {{ "shopify_common.js" | shopify_asset_url | script_tag }}
     {{ "customer_area.js"  | shopify_asset_url | script_tag }}
   {% endif %}
+
+  {% if template contains 'collection' %}
+    {% section 'filter-menu-settings' %}
+  {% endif %}
 </head>
 
 {%- capture money_format_output -%}
@@ -161,6 +203,9 @@
     {{- shop.money_format | strip_html -}}
   {%- endif -%}
 {%- endcapture -%}
+
+<script src="https://cdn.intelligems.io/674c4f3b7539.js"></script>
+
 <body
   class="
     {%- if template.name == '404' -%}
@@ -304,6 +349,12 @@
   {% render 'mobile-search' %}
 
   {% render 'structured-data' %}
+
+  <noscript class="asyncloader">
+  {% comment %} JustUno App {% endcomment %}
+  <script data-cfasync="false">window.ju_num="6C314E84-697E-4FEE-93FC-7137C03D4C76";window.asset_host='//cdn.jst.ai/';(function(i,s,o,g,r,a,m){i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)};a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script',asset_host+'vck.js','juapp');</script>
+  {% comment %} END JustUno App {% endcomment %}
+</noscript>
 </body>
 </html>
 {% endcapture %}
