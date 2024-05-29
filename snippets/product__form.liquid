@@ -869,6 +869,26 @@
               <path fill="none" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M9,17l3.9,3.9c0.1,0.1,0.2,0.1,0.3,0L23,11"/>
             </svg>
           </button>
+
+          {% render 'product-stock-warning' %}
+          {% comment %}
+            Don't forget about the Dynamic Checkout buttons!
+            https://help.shopify.com/en/themes/customization/store/dynamic-checkout-buttons
+            NOTE: Hidden due to incompatibility with Customizely
+          {% endcomment %}
+          {% comment %} {{ form | payment_button }} {% endcomment %}
+
+          <div class="shipping-countdown">
+            <div class="icon-wrapper">
+              <svg viewBox='0 0 40 20' class='icon'>
+                <use href='#shipping'></use>
+              </svg>
+            </div>
+            {% comment %} <p>Order in the next <strong>21 hours and 30 minutes</strong> and have it delivered between Sept. 23–Sept. 25</p> {% endcomment %}
+            {% comment %} TODO: Reconfigure DELM after launch {% endcomment %}
+            <div class="product-single__description"></div>
+          </div>
+
           {% if show_payment_button %}
             {{ form | payment_button }}
           {% endif %}

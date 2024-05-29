@@ -339,13 +339,13 @@ $color-text-base: #5e5e5e;
 .breadcrumb {
     ul {
         gap: 8px;
-        font-size: 14px;
-
+        font-size: 12px;	
         li {
             display: flex;
             gap: 6px;
             a {
                 color: #1f2c41;
+				font-weight: 400;
             }
         }
     }
@@ -444,6 +444,7 @@ $color-text-base: #5e5e5e;
 
 
 .js-product_section {
+	&.product_section{column-gap: clamp(2rem, 5vw, 6rem);}
     .product-block--first .product-title {
         color: $color-ui-navy
     }
@@ -542,4 +543,67 @@ $color-text-base: #5e5e5e;
             color: $color-text-base
         }
     }
+}
+
+.shipping-countdown {
+    display: flex;
+    margin: 2rem 0;
+    align-items: center;
+    color: #1f2c41;
+    padding-bottom: 2rem;
+	margin-bottom: 0;
+    // border-bottom: 1px solid #dbdbdc;
+}
+.shipping-countdown .icon {
+    font-size: calc(1.625rem + 4.5vw);
+    min-width: 0vw;
+    height: auto;
+    margin-right: .8rem;
+	width: 1em;
+    height: 1em;
+}
+
+@media (min-width: 1200px) {
+    .shipping-countdown .icon {
+        font-size:5rem;
+    }
+}
+
+.shipping-countdown .icon-wrapper {
+    position: relative;
+}
+
+.shipping-countdown p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.shipping-countdown strong {
+    font-weight: 400;
+    color: #de0d37;
+}
+
+.shipping-countdown #deliverymessage {
+    background: none;
+    font-size: 1rem
+}
+
+.shipping-countdown #deliverymessage p {
+    margin-top: 1em;
+}
+
+.shipping-countdown #deliverymessage p span {
+    color: #de0d37;
+}
+
+.StockLeft {
+    background-color: #fffcfa;
+    text-align: center;
+    padding: 1em;
+}
+
+.StockLeft p {
+    margin: 0;
+    color: #1f2c41;
+    font-weight: 600;
 }

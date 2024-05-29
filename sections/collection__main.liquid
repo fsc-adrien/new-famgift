@@ -81,10 +81,7 @@
               text_alignment: 'center'
       %}
     </div>
-    <div class="collection__filters three-fifths medium-down--one-whole column">
-      {% comment %} Collection filters {% endcomment %}
-      {% render 'collection__filters' %}
-    </div>
+
     {% if settings.heading_divider_width != 0 and settings.heading_divider_style == 'long' %}
       <div class="heading-divider-below heading-wrapper one-whole column hide-when-banner-enabled">
         <div class="heading-divider
@@ -255,7 +252,15 @@
           </div>
         </div>
       {% else %}
+      {% comment %} TODO {% endcomment %}
         <div class="collection-matrix__wrapper">
+          <div class="collection__filters one-whole medium-down--one-whole column">
+            {% comment %} Collection filters {% endcomment %}
+            <div class="status">
+              <span class="results_count">Showing {{ collection.products_count }} Results</span>
+            </div>
+            {% render 'collection__filters' %}
+          </div>
           <div class="collection__loading-icon button is-loading is-loading--icon-only"></div>
           <div class="container collection-matrix" {% if section.settings.pagination_type != 'basic_pagination' %}data-load-more--grid {% endif %}>
             {%- assign products_per_row = section.settings.products_per_row -%}

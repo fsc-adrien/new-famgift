@@ -236,7 +236,7 @@
       "link_title": "Browse {{ title }}",
       "all_collection_title": "All {{ title }}",
       "quick_shop": "Quick View",
-      "pagination_button": "Load More Products",
+      "pagination_button": "Load More",
       "new": "New",
       "coming_soon": "Coming Soon",
       "best_seller": "Best Seller",

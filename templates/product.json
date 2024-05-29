@@ -49,6 +49,7 @@
         },
         "share": {
           "type": "share",
+          "disabled": true,
           "settings": {
           }
         }
@@ -75,7 +76,7 @@
         "enable_thumbnail_slider": true,
         "width": "standard",
         "padding_top": 20,
-        "padding_bottom": 20,
+        "padding_bottom": 80,
         "animation": "none",
         "css_class": "",
         "custom_css": ""
@@ -83,6 +84,7 @@
     },
     "recommendations": {
       "type": "product__recommendations",
+      "disabled": true,
       "settings": {
         "show_product_recommendations": true,
         "product_recommendations_style": "grid",
@@ -100,12 +102,31 @@
         "css_class": "",
         "custom_css": ""
       }
+    },
+    "product_why_familygifts_48R78J": {
+      "type": "product-why-familygifts",
+      "settings": {
+        "title": "Why Family Gifts Co."
+      }
+    },
+    "product_review_8EUB7F": {
+      "type": "product-review",
+      "settings": {
+      }
+    },
+    "product_trending_now_PBiDc9": {
+      "type": "product-trending-now",
+      "settings": {
+      }
     }
   },
   "order": [
     "breadcrumbs",
     "sidebar",
     "main",
-    "recommendations"
+    "recommendations",
+    "product_why_familygifts_48R78J",
+    "product_review_8EUB7F",
+    "product_trending_now_PBiDc9"
   ]
 }

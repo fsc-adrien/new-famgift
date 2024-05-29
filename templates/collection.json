@@ -50,17 +50,34 @@
         "products_per_row": 3,
         "mobile_products_per_row": "1",
         "pagination_limit": 48,
-        "pagination_type": "basic_pagination",
+        "pagination_type": "load_more",
         "width": "standard",
         "padding_top": 40,
         "padding_bottom": 40,
         "css_class": "",
         "custom_css": ""
       }
+    },
+    "gift_guide_banner_RtJa4t": {
+      "type": "gift-guide-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/about-premium-canvas.jpg",
+        "title": "About Our Premium Canvas Prints",
+        "intro": "<p>Our top-notch package is specifically designed for safe transport. If you order more than one canvas, each canvas will be shipped separately each with a tracking number to ensure safe delivery.<\/p><p><\/p>",
+        "button_label": "Learn More",
+        "button_link": ""
+      }
+    },
+    "collection_canvas_dqnzwf": {
+      "type": "collection-canvas",
+      "settings": {
+      }
     }
   },
   "order": [
     "banner",
-    "main"
+    "main",
+    "gift_guide_banner_RtJa4t",
+    "collection_canvas_dqnzwf"
   ]
 }

@@ -11389,7 +11389,7 @@ shopify-payment-terms {
 }
 
 .cart-warning {
-  display: block;
+  display: none;
   width: 100%;
   margin-top: 20px;
 }
@@ -19049,7 +19049,10 @@ ul.faceted-filter-group-display__list {
 /* # Collection
 ================================================== */
 .collection__filters {
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .collection__filters .select, .collection__filters .age-gate__select-wrapper {
   max-width: 50%;
@@ -19423,4 +19426,25 @@ ul.faceted-filter-group-display__list {
 
 .Section--giftGuideBanner .main figure:before {
   background: linear-gradient(to right, #fef7f1, rgb(254 247 241 / 0%) 50%);
+}
+
+body.page {
+  .section.is-width-standard{max-width: 78rem;}
+  .page__title.title {
+      max-width: 24em;
+      margin: 0 auto .6em;
+      color: #1f2c41;
+      font-weight: 700;
+      line-height: 1.1;
+  }
+  a{font-weight: 600;}
+}
+@media (min-width: 1600px) {
+  body.page {
+    .page__title.title {
+      font-size: 3.6rem;
+      margin-top: 3rem;
+      margin-bottom: 2rem;
+    }
+  }
 }
