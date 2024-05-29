@@ -101,13 +101,49 @@
 
 {% comment %} HTML markup {% endcomment %}
 <footer class="footer__container {{ css_class }}">
+  <div class="footer-subcribe">
+    <div class="Container Container--narrower">
+      <h3>
+        <svg viewBox='0 0 20 20' class='icon' width='1em' height='1em'>
+          <use href='#lamp'></use>
+        </svg>
+        Gift Ideas to Your Inbox
+      </h3>
+      <p><u>Get 10% off</u> when you sign up for our gift guide newsletter.</p>
+      {% comment %} <div class="Form__grid" data-grid="medium-2">
+        <div class="Form__input" data-grid-col="medium-1-2">
+          <input type="email" placeholder="Email address">
+        </div>
+        <div class="Form__input" data-grid-col="medium-1-2">
+          <button class="Button" data-style="dark text" data-layout="noLayout">Join & Save</button>
+        </div>
+      </div> {% endcomment %}
+      {% assign klaviyo_link = 'https://manage.kmail-lists.com/subscriptions/subscribe?a=M5XpEH&g=Ku3HfK' %}
+      {% if klaviyo_link %}
+        <form action="{{ klaviyo_link }}" method="post" class="klaviyo_styling klaviyo_standard_embed_{{klaviyo_link}}" id="email_signup" target="_blank" novalidate="novalidate">
+          <input type="hidden" name="g" value="{{klaviyo_link}}">
+          <input type="hidden" name="$fields" value="firstName,lastName"/>
+          <div class="input-group password__input-group klaviyo_field_group">
+            <input type="email" id="k_id_email" class="input-group__field contact_email newsletter__input" value="" name="EMAIL" class="contact_email" placeholder="Email address">
+            <span class="input-group__btn">
+              <button type="submit" class="btn newsletter__submit klaviyo_submit_button" name="subscribe" id="btnSubmit" value="{{ 'general.newsletter_form.submit' | t }}">
+                <span class="newsletter__submit-text--large">Join & Save</span>
+              </button>
+            </span>
+          </div>
+        </form>
+      {% endif %}
+    </div>
+    <span class="deco"></span>
+  </div>
+
   <section class="footer__content
                   section
                   is-width-wide
                   has-background
                   has-padding-top
                   has-padding-bottom">
-    <div class="container has-limit is-justify-space-between">
+    <div class="section is-justify-space-between">
       {% for block in section.blocks %}
         <div id="shopify-section-{{ block.id }}" class="footer__block block__{{ block.id }} block__{{ block.type | downcase | replace: '_', '-' }}
                     {% render 'column-width', value: section.blocks.size %}
@@ -225,7 +261,7 @@
         </div>
       {%- endif -%}
 
-      <div
+      {% comment %} <div
         class="
           sub-footer__row
           sub-footer__row--second
@@ -248,7 +284,7 @@
         {%- if show_follow_on_shop and right_column_item_count == 0 -%}
           {{ shop | login_button: action: 'follow' }}
         {%- endif -%}
-      </div>
+      </div> {% endcomment %}
 
     </div>
   </section>

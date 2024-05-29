@@ -19,9 +19,9 @@
     </span>
   {% else %}
     <span class="product-thumbnail__price price {% if product.compare_at_price_max > product.price %}sale{% endif %}">
-      {% if product.price_varies and product.price_min > 0 %}
+      {% comment %} {% if product.price_varies and product.price_min > 0 %}
         <small><em>{{ 'products.general.from' | t }}</em></small>
-      {% endif %}
+      {% endif %} {% endcomment %}
       {% if product.price_min > 0 %}
         <span class="money">
           {%
@@ -52,4 +52,11 @@
       %}
     {% endif %}
   {% endif %}
+
+  <div
+    class="loox-rating"
+    data-id="{{ product.id }}"
+    data-rating="{{ product.metafields.loox.avg_rating }}"
+    data-raters="{{ product.metafields.loox.num_reviews }}"
+  ></div>
 </div>

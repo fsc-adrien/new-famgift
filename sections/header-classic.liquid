@@ -179,7 +179,7 @@
                 {% if link.links == blank %}
                   <div class="navbar-item header__item {% if link.active or link.child_active %}is-active{% endif %}" data-navlink-handle="{{ link.title | handleize }}">
                     <label for="mega-{{ link.title | handleize }}">
-                      <a {% unless link.url == 'http://' or link.url == '' or link.url == 'https://' or link.url == '#' %} href="{{ link.url }}" {% endunless %} class="navbar-link header__link {% if link.active %}is-active{% endif %} is-arrowless">
+                      <a {% unless link.url == 'http://' or link.url == '' or link.url == 'https://' or link.url == '#' %} href="{{ link.url }}" {% endunless %} class="navbar-link header__link is-arrowless">
                         {{ link.title }}
                       </a>
                     </label>
@@ -187,13 +187,15 @@
                 {% else %}
                   <div class="navbar-item header__item has-dropdown has-dropdown--{{ settings.dropdown_style }} is-hoverable {% if link.active or link.child_active %}is-active{% endif %}" aria-haspopup="true" aria-expanded="false" data-navlink-handle="{{ link.title | handleize }}">
                     <label for="dropdown-{{ link.title | handleize }}">
-                      <a {% unless link.url == 'http://' or link.url == '' or link.url == 'https://' or link.url == '#' %} href="{{ link.url }}" {% endunless %} class="navbar-link header__link {% if link.active or link.child_active %}is-active{% endif %}">
+                      <a {% unless link.url == 'http://' or link.url == '' or link.url == 'https://' or link.url == '#' %} href="{{ link.url }}" {% endunless %} class="navbar-link header__link">
                         {{ link.title }}
                       </a>
                     </label>
                     {% render 'header__dropdown-menu',
                             link: link,
-                            index: forloop.index
+                            index: forloop.index,
+                            parent_title: link.title,
+                            blocks: section.blocks
                     %}
                   </div>
                 {% endif %}
@@ -211,7 +213,7 @@
     </section>
   </header>
 
-  {% render 'mobile-header' %}
+  {% render 'mobile-header', section: section %}
 
   {% if settings.search_display_style == 'overlay' %}
     {% render 'search-overlay' %}
@@ -264,6 +266,18 @@
         "id": "main_linklist",
         "label": "Main menu",
         "default": "main-menu"
+      },
+      {
+        "type": "link_list",
+        "id": "menu_bestsellers",
+        "label": "Best Sellers List",
+        "info": "Manages the list of products shown as Best Sellers on the mobile navigation drawer."
+      },
+      {
+        "type": "link_list",
+        "id": "menu_quicklinks",
+        "label": "Quicklinks",
+        "info": "Quick links navigation option for mobile users"
       },
       {
         "type": "select",
@@ -471,6 +485,46 @@
         "type": "textarea",
         "id": "custom_css",
         "label": "Custom CSS"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "menu-tout",
+        "name": "Menu Item Tout",
+        "settings": [
+          {
+            "type": "text",
+            "id": "menu_item",
+            "label": "Menu Item",
+            "info": "Needs to match the menu item title for this tout to be matched and displayed on the site."
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "intro",
+            "label": "Intro"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button Label",
+            "default": "Learn More"
+          }
+        ]
       }
     ]
   }

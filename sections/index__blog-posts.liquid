@@ -38,7 +38,7 @@
 
 <section
   class="
-    section
+    section section-blog--posts
     {{ section.settings.css_class }}
     is-width-{{ section.settings.width }}
   "
@@ -48,14 +48,9 @@
 >
   {% if title != blank %}
     <div class="container">
-      {%
-        render 'heading',
-        title: title,
-        heading_tag: 'h2',
-        context: 'featured-blog',
-        text_alignment: 'center',
-        url: blog.url,
-      %}
+      <header class="Section__header">
+        <h4>{{ title }}</h4>
+      </header>
     </div>
   {% endif %}
 
@@ -121,41 +116,6 @@
           {% endif %}
 
           <div class="card-content blog-card__content">
-            <div class="media">
-              <div class="media-content">
-                <h3 class="title">
-                  <a
-                    class="featured-article--link"
-                    href="{{ article.url }}"
-                    title="{{ article.title | escape }}"
-                  >
-                    {{- article.title -}}
-                  </a>
-                </h3>
-              </div>
-            </div>
-
-            {% if article.excerpt != blank and section.settings.blog_show_excerpt %}
-              {% assign postexcerpt = article.excerpt | size %}
-
-              {% if postexcerpt > 150 %}
-                {% assign excerptlength = 'lg' %}
-              {% elsif postexcerpt <= 150 %}
-                {% assign excerptlength = 'sm' %}
-              {% endif %}
-
-              <div
-                class="
-                  excerpt
-                  excerpt-length-{{ excerptlength }}
-                  has-margin-bottom
-                "
-              >
-                {{ article.excerpt }}
-                <span class="truncation-fade"></span>
-              </div>
-            {% endif %}
-
             <div class="meta-info is-small">
               {% if section.settings.blog_show_tags %}
                 {% if article.tags.size > 0 %}
@@ -183,6 +143,25 @@
                 blog_comment_count: section.settings.blog_comment_count,
               %}
             </div>
+
+            <div class="media">
+              <div class="media-content">
+                <h3 class="title">
+                  <a
+                    class="featured-article--link"
+                    href="{{ article.url }}"
+                    title="{{ article.title | escape }}"
+                  >
+                    {{- article.title -}}
+                  </a>
+                </h3>
+              </div>
+            </div>
+
+            
+            {% if article.excerpt_or_content != blank and section.settings.blog_show_excerpt %}
+              <p class="excerpt">{{ article.excerpt_or_content | strip_html | truncate: 180 }}</p>
+            {% endif %}
           </div>
 
           {% if section.settings.button_type != 'none' %}

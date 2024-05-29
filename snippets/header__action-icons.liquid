@@ -9,7 +9,10 @@
 {%- assign locale_selector = false -%}
 {%- assign currency_selector = false -%}
 
-{%- if object.settings.show_currency_selector and shop.enabled_currencies.size > 1 or localization.available_countries.size > 1 -%}
+{%- if object.settings.show_currency_selector
+  and shop.enabled_currencies.size > 1
+  or localization.available_countries.size > 1
+-%}
   {%- assign currency_selector = true -%}
 {%- endif -%}
 
@@ -18,8 +21,6 @@
 {%- endif -%}
 
 <div class="header__icons header__icon-style-{{ icon_style | replace: '_', '-' }} {{ header_icon_class }}">
-
-
   {% comment %} Currency converter select {% endcomment %}
   <div class="header__link">
     {% render 'localization-switcher',
@@ -40,11 +41,17 @@
       data-show-search-trigger
       tabindex="0"
     >
-      {%
-        render 'icon',
-        name: 'search',
-        icon_class: 'header__icon',
-      %}
+      {% comment %}
+        {%
+          render 'icon',
+          name: 'search',
+          icon_class: 'header__icon',
+        %}
+      {% endcomment %}
+
+      <svg viewBox="0 0 20 20" class="icon--primary" width="40px" height="40px">
+        <use href="#search"></use>
+      </svg>
 
       <span class="icon-caption">
         {{- 'general.search.title' | t | escape -}}
@@ -56,33 +63,41 @@
     {% comment %} Account icon {% endcomment %}
     {% if customer %}
       {% comment %} Logout {% endcomment %}
-      <a href="{{ routes.account_url }}" class="header__link action-area__link" >
-          {% render 'icon',
-                  name: 'avatar',
-                  icon_class: 'header__icon'
-          %}
-          <span class="icon-caption">{{ 'layout.customer.my_account' | t | escape }}</span>
+      <a href="{{ routes.account_url }}" class="header__link action-area__link">
+        {% render 'icon', name: 'avatar', icon_class: 'header__icon' %}
+        <span class="icon-caption">{{ 'layout.customer.my_account' | t | escape }}</span>
       </a>
     {% else %}
       {% comment %} Login {% endcomment %}
-      <a href="{{ routes.account_login_url }}" class="header__link action-area__link" >
-          {% render 'icon',
-                  name: 'avatar',
-                  icon_class: 'header__icon'
-          %}
-          <span class="icon-caption">{{ 'layout.customer.log_in' | t | escape }}</span>
+      <a href="{{ routes.account_login_url }}" class="header__link action-area__link">
+        {% render 'icon', name: 'avatar', icon_class: 'header__icon' %}
+        <span class="icon-caption">{{ 'layout.customer.log_in' | t | escape }}</span>
       </a>
     {% endif %}
   {% endif %}
 
   {% comment %} Cart icon {% endcomment %}
-  <div class="header-cart action-area__link {% if cart.item_count != 0 %}has-cart-count{% endif %}" data-ajax-cart-trigger>
-    <a class="header__link" href="{{ routes.cart_url }}" >
+  <div
+    class="header-cart action-area__link {% if cart.item_count != 0 %}has-cart-count{% endif %}"
+    data-ajax-cart-trigger
+  >
+    <a class="header__link" href="{{ routes.cart_url }}">
       <span class="header-cart__icon">
-        {% render 'icon',
-                name: settings.cart_icon,
-                icon_class: 'header__icon'
-        %}
+        {% comment %}
+          {% render 'icon',
+                  name: settings.cart_icon,
+                  icon_class: 'header__icon'
+          %}
+        {% endcomment %}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="40"
+          viewBox="0 0 500 500"
+          class="icon--primary"
+        >
+          <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1"><g fill="currentColor" fill-rule="nonzero" transform="translate(-1499 -502)"><path d="M1880.51 651.444h-51.796v-23.11c0-42.667-34.532-77.334-77.032-77.334s-77.031 34.667-77.031 77.333v23.111h-51.797c-4.87 0-8.854 4-8.854 8.89V942.11c0 4.889 3.984 8.889 8.854 8.889h257.656c4.87 0 8.855-4 8.855-8.889V660.333c0-4.889-3.985-8.889-8.855-8.889zm-188.15-23.11c0-32.89 26.562-59.556 59.322-59.556 32.76 0 59.323 26.666 59.323 59.555v23.111H1692.36v-23.11zm179.296 304.888h-239.948v-264h42.943v18.222c0 4.89 3.984 8.89 8.854 8.89 4.87 0 8.854-4 8.854-8.89v-18.222h118.646v18.222c0 4.89 3.985 8.89 8.854 8.89 4.87 0 8.855-4 8.855-8.89v-18.222h42.942v264z"></path></g></g>
+        </svg>
         <span class="header-cart__count header-cart__count--badge badge" data-bind="itemCount">
           {{ cart.item_count }}
         </span>

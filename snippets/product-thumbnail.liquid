@@ -230,10 +230,10 @@
       </div>
     </div>
 
-  {%
+  {% comment %} {%
     render 'product-thumbnail__swatch',
     product: product
-  %}
+  %} {% endcomment %}
 
   {% if hover_enabled == false %}
     {% if settings.enable_shopify_collection_badges and product.metafields.reviews.rating.value != blank %}

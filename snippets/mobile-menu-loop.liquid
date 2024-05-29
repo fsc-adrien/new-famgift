@@ -32,15 +32,15 @@
                     <a {% unless sub_link.url == 'http://' or sub_link.url == '' or sub_link.url == '/' or sub_link.url == 'https://' or sub_link.url == '#' %}href="{{ sub_link.url }}"{% endunless %} class="mobile-menu-link {% if sub_link.active %}is-active{% endif %}">
                       {{ sub_link.title }}
                     </a>
-                  <span class="close-sub-dropdown"></span>
+                  {% comment %} <span class="close-sub-dropdown"></span> {% endcomment %}
                   </label>
-                  <ul class="mobile-sub-submenu__list mobile-menu__submenu" data-mobile-submenu-second-level-list>
+                  {% comment %} <ul class="mobile-sub-submenu__list mobile-menu__submenu" data-mobile-submenu-second-level-list>
                     {% for sub-sub_link in sub_link.links %}
                       <li class="mobile-menu__submenu-list-item">
                         <a class="mobile-menu__item" href="{{ sub-sub_link.url }}">{{ sub-sub_link.title }}</a>
                       </li>
                     {% endfor %}
-                  </ul>
+                  </ul> {% endcomment %}
                 </div>
               {% endif %}
             </li>

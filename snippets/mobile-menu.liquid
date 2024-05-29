@@ -1,7 +1,10 @@
 {%- assign locale_selector = false -%}
 {%- assign currency_selector = false -%}
 
-{%- if settings.show_currency_selector and shop.enabled_currencies.size > 1 or localization.available_countries.size > 1 -%}
+{%- if settings.show_currency_selector
+  and shop.enabled_currencies.size > 1
+  or localization.available_countries.size > 1
+-%}
   {%- assign currency_selector = true -%}
 {%- endif -%}
 
@@ -29,7 +32,7 @@
         <li>
           {% if customer %}
             {% comment %} Logout {% endcomment %}
-            <a class="mobile-menu__item item-with-icon" href="{{ routes.account_url }}" >
+            <a class="mobile-menu__item item-with-icon" href="{{ routes.account_url }}">
               {% if settings.icon_style != 'text' %}
                 {% render 'icon', name: 'avatar' %}
               {% endif %}
@@ -39,7 +42,7 @@
             </a>
           {% else %}
             {% comment %} Login {% endcomment %}
-            <a class="mobile-menu__item item-with-icon" href="{{ routes.account_login_url }}" >
+            <a class="mobile-menu__item item-with-icon" href="{{ routes.account_login_url }}">
               {% if settings.icon_style != 'text' %}
                 {% render 'icon', name: 'avatar' %}
               {% endif %}
@@ -51,13 +54,37 @@
         </li>
       {% endif %}
     </ul>
-    {%
-      render 'localization-switcher',
+
+    {% assign menu_bestsellers = linklists[section.settings.menu_bestsellers] %}
+    {% if menu_bestsellers.links.size > 0 %}
+      <div class="mobile-menu__best-sellers">
+        <h1 class="mobile-menu__bs--heading">Best Sellers</h1>
+        <div class="mobile-menu__bs--grid">
+          {% for link in menu_bestsellers.links %}
+            {% assign url = link.url | split: '/' %}
+            {% assign handle = url.last %}
+            {% assign product = all_products[handle] %}
+            <a href="{{ link.url }}" class="mobile-menu__bs--item">
+              {% render 'image-element',
+                image: product.featured_image,
+                alt: product.title,
+                additional_classes: 'mobile-menu__bs--image',
+                focal_point: product.featured_image.presentation.focal_point
+              %}
+              <h4 class="mobile-menu__bs--name">
+                {{ product.title }}
+              </h4>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    {%  endif %}
+    {% render 'localization-switcher',
       id: 'selector-form--mobile',
       additional_classes: 'selectors-form--mobile',
       currency_selector: currency_selector,
       locale_selector: locale_selector,
-      show_currency: settings.show_currency_selector,
-     %}
+      show_currency: settings.show_currency_selector
+    %}
   </div>
 </div>

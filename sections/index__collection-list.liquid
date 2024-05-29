@@ -91,6 +91,9 @@
     data-scroll-class="{{ section.settings.animation }}"
   {% endif %}
 >
+  <header class="Section__header">
+    <h4>{{ section.settings.title }}</h4>
+  </header>
   {% if use_mobile_slider and section.settings.show_arrows %}
     <div class="container">
       <div class="one-whole column">
@@ -157,7 +160,7 @@
           "
         >
           <div class="product-wrap enable-zoom-{{ section.settings.enable_zoom }}">
-            <div class="collection-thumbnail-overlay"></div>
+            {% comment %} <div class="collection-thumbnail-overlay"></div> {% endcomment %}
 
             {% if collection_image != blank %}
               <div class="thumbnail image__container has-image-crop">
@@ -206,7 +209,7 @@
               "
               href="{{ collection.url }}"
             >
-              <span class="title">
+              <span class="">
                 {% if title != blank %}
                   {{- title -}}
                 {% elsif collection != blank %}
@@ -248,6 +251,12 @@
     "class": "collection-list jsCollectionList",
     "max_blocks": 8,
     "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Featured Collections"
+      },
       {
         "type": "range",
         "id": "collections_per_row",

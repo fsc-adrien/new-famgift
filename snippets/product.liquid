@@ -68,6 +68,7 @@
       medium-down--one-whole
     "
   >
+    {% render 'breadcrumb', context: 'product' %}
     {% if stickers_enabled %}
       {% assign collection_handles = product.collections | map: 'handle' %}
       {%
@@ -122,6 +123,11 @@
               {{ product.title }}
             {% endif %}
           </h1>
+          {% if product.metafields.loox.num_reviews %}
+            <a href="#looxReviews"><div class="loox-rating" data-id="{{ product.id }}" data-rating="{{ product.metafields.loox.avg_rating }}" data-raters="{{ product.metafields.loox.num_reviews }}"></div></a>
+          {% else %}
+            <a href="#looxReviews"><div class="loox-rating" data-id="{{ product.id }}" data-rating="4.8" data-raters=""></div></a>
+          {% endif %}
 
         {%- elsif block.type == 'size-chart' -%}
           {% comment %} Size chart {% endcomment %}
@@ -265,6 +271,7 @@
           %}
 
           <div class="product__description content">
+            <h6 class="product__description--title">Description</h6>
             <div
               class="
                 has-padding-top
@@ -408,5 +415,11 @@
         {%- endif -%}
       </div>
     {%- endfor -%}
+
+    <section class="Section Section--qualityHighlights productAB">
+      <div class="Section__content Container">
+        {% render 'quality-highlights' %}
+      </div>
+    </section>
   </div>
 </div>

@@ -3901,14 +3901,15 @@ $(window).on('load', function() {
     resizeTimer = setTimeout(function() {
 
       window.PXUTheme.objectFitImages.calculateAspectRatio();
-
-      if (!isScreenSizeLarge()){
-        // When 798 or less
-        window.PXUTheme.mobileMenu.init();
-      } else {
-        // When larger than 798
-        window.PXUTheme.mobileMenu.unload();
-      }
+      window.PXUTheme.mobileMenu.init();
+      // isScreenSizeLarge
+      // if ($(window).width() <= 1024){
+      //   // When 798 or less
+      //   window.PXUTheme.mobileMenu.init();
+      // } else {
+      //   // When larger than 798
+      //   window.PXUTheme.mobileMenu.unload();
+      // }
 
     }, 250);
 
