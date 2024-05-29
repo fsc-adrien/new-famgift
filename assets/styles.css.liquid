@@ -7786,12 +7786,7 @@ a.tag:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-}
-@media only screen and (max-width: 480px) {
-  .breadcrumb ul,
-  .breadcrumb ol {
-    justify-content: center;
-  }
+  row-gap: 0;
 }
 .breadcrumb .icon:first-child {
   margin-right: 0.5em;
@@ -11045,6 +11040,7 @@ shopify-payment-terms {
 ================================================== */
 .product-gallery .product-gallery__main .flickity-prev-next-button {
   transition: all 0.3s ease-in-out;
+  display: none
 }
 @media only screen and (max-width: 798px) {
   .product-gallery .product-gallery__main .flickity-prev-next-button {

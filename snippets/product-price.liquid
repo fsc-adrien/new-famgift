@@ -1,0 +1,38 @@
+{% assign current_variant = product.selected_or_first_available_variant %}
+{%- assign compare_at_price = current_variant.compare_at_price -%}
+{%- assign price = current_variant.price -%}
+{%- assign price_varies = product.price_varies -%}
+{%- assign available = current_variant.available -%}
+
+
+<div data-price-wrapper>
+
+  {% if compare_at_price > price %}
+    {% comment %} <span class="discount-price">{{ compare_at_price | minus: price | times: 100 | divided_by: compare_at_price }}% OFF</span> {% endcomment %}
+    <span class="prev-price">{{ compare_at_price | money }}</span>
+    <span class="new-price" data-product-price>{{ price | money }}</span>
+  {% else %}
+    <div>
+      <span class="price" data-product-price>{{ price | money }}</span>
+    </div>
+  {% endif %}
+</div>
+
+
+<style>
+  .discount-price {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgb(235, 69, 69);
+    color: white;
+    padding: 10px 15px;
+    z-index: 10;
+  }
+  .prev-price {
+    text-decoration: line-through;
+    font-size: 16px;
+    padding-right: 10px;
+    opacity: 0.5;
+  }
+</style>

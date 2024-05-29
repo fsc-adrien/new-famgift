@@ -1,0 +1,6 @@
+development:
+  password: c3c85332f69177cdf15ef2b4d08b0c5c
+  theme_id: "135350157412"
+  store: familygiftsco.myshopify.com
+  ignores:
+  - themekit-ignore-files.txt

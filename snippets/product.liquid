@@ -271,6 +271,7 @@
           %}
 
           <div class="product__description content">
+            <h6 class="product__description--title">Description</h6>
             <div
               class="
                 has-padding-top
@@ -414,5 +415,11 @@
         {%- endif -%}
       </div>
     {%- endfor -%}
+
+    <section class="Section Section--qualityHighlights productAB">
+      <div class="Section__content Container">
+        {% render 'quality-highlights' %}
+      </div>
+    </section>
   </div>
 </div>
