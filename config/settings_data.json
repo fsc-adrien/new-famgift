@@ -45,6 +45,105 @@
         "type": "filter-menu-settings",
         "settings": {
         }
+      },
+      "index__faq": {
+        "type": "index__faq",
+        "blocks": {
+          "content_itTiBb": {
+            "type": "content",
+            "settings": {
+              "title": "How do I change or cancel my order?",
+              "answer": "<p>In the event you wish to cancel or change your order, please contact us within 24 hours of your order at <a href=\"mailto:care@familygiftsco.com\"><em>care@familygiftsco.com<\/em><\/a><em>.<\/em> As all of our products are custom made, we can not accommodate changes after 24 hours.<\/p><p><em>*Please note that any orders that have already been packed or shipped cannot be canceled.<\/em><\/p>",
+              "answer_html": ""
+            }
+          },
+          "content_qhtxL6": {
+            "type": "content",
+            "settings": {
+              "title": "How long does Shipping \/ Delivery take?",
+              "answer": "<p>Provide the answer to the question here.<\/p>",
+              "answer_html": "<table data-mce-fragment=\"1\">\n<tbody data-mce-fragment=\"1\">\n<tr data-mce-fragment=\"1\">\n<td data-mce-fragment=\"1\">\n<p data-mce-fragment=\"1\"><b data-mce-fragment=\"1\">Shipping Method<\/b><\/p>\n<\/td>\n<td data-mce-fragment=\"1\">\n<p data-mce-fragment=\"1\"><b data-mce-fragment=\"1\">Creation Time<\/b><\/p>\n<\/td>\n<td data-mce-fragment=\"1\">\n<p data-mce-fragment=\"1\"><b data-mce-fragment=\"1\">Shipping Time<\/b><\/p>\n<\/td>\n<td data-mce-fragment=\"1\">\n<p data-mce-fragment=\"1\"><b data-mce-fragment=\"1\">Total Delivery Time<\/b><\/p>\n<\/td>\n<\/tr>\n<tr data-mce-fragment=\"1\">\n<td data-mce-fragment=\"1\">\n<p data-mce-fragment=\"1\"><span data-mce-fragment=\"1\" style=\"font-weight: 400;\" data-mce-style=\"font-weight: 400;\">Free \/ Standard<\/span><\/p>\n<\/td>\n<td data-mce-fragment=\"1\">\n<p data-mce-fragment=\"1\"><span data-mce-fragment=\"1\" style=\"font-weight: 400;\" data-mce-style=\"font-weight: 400;\">2-4 days<\/span><\/p>\n<\/td>\n<td data-mce-fragment=\"1\">\n<p data-mce-fragment=\"1\"><span data-mce-fragment=\"1\" style=\"font-weight: 400;\" data-mce-style=\"font-weight: 400;\">4-6 days<\/span><\/p>\n<\/td>\n<td data-mce-fragment=\"1\">\n<p data-mce-fragment=\"1\"><span data-mce-fragment=\"1\" style=\"font-weight: 400;\" data-mce-style=\"font-weight: 400;\">8-10 days<\/span><\/p>\n<\/td>\n<\/tr>\n<tr data-mce-fragment=\"1\">\n<td data-mce-fragment=\"1\">\n<p data-mce-fragment=\"1\"><span data-mce-fragment=\"1\" style=\"font-weight: 400;\" data-mce-style=\"font-weight: 400;\">Faster<\/span><\/p>\n<\/td>\n<td data-mce-fragment=\"1\">\n<p data-mce-fragment=\"1\"><meta charset=\"utf-8\"><span>2-4<\/span><span> days<\/span><\/p>\n<\/td>\n<td data-mce-fragment=\"1\">\n<p data-mce-fragment=\"1\"><span data-mce-fragment=\"1\" style=\"font-weight: 400;\" data-mce-style=\"font-weight: 400;\">3-4 days<\/span><\/p>\n<\/td>\n<td data-mce-fragment=\"1\">\n<p data-mce-fragment=\"1\"><span data-mce-fragment=\"1\" style=\"font-weight: 400;\" data-mce-style=\"font-weight: 400;\">7-8 days<\/span><\/p>\n<\/td>\n<\/tr>\n<tr data-mce-fragment=\"1\">\n<td data-mce-fragment=\"1\">\n<p data-mce-fragment=\"1\"><span data-mce-fragment=\"1\" style=\"font-weight: 400;\" data-mce-style=\"font-weight: 400;\">Fastest<\/span><\/p>\n<\/td>\n<td data-mce-fragment=\"1\">\n<p data-mce-fragment=\"1\"><meta charset=\"utf-8\"><span>2-4<\/span><span> days<\/span><\/p>\n<\/td>\n<td data-mce-fragment=\"1\">\n<p data-mce-fragment=\"1\"><span data-mce-fragment=\"1\" style=\"font-weight: 400;\" data-mce-style=\"font-weight: 400;\">2 days<\/span><\/p>\n<\/td>\n<td data-mce-fragment=\"1\">\n<p data-mce-fragment=\"1\"><span data-mce-fragment=\"1\" style=\"font-weight: 400;\" data-mce-style=\"font-weight: 400;\">4-6 days<\/span><\/p>\n<\/td>\n<\/tr>\n<tr data-mce-fragment=\"1\">\n<td data-mce-fragment=\"1\">\n<p data-mce-fragment=\"1\"><span data-mce-fragment=\"1\" style=\"font-weight: 400;\" data-mce-style=\"font-weight: 400;\">Last Minute*<\/span><\/p>\n<\/td>\n<td data-mce-fragment=\"1\">\n<p data-mce-fragment=\"1\"><meta charset=\"utf-8\"><span>2-4<\/span><span> days<\/span><\/p>\n<\/td>\n<td data-mce-fragment=\"1\">\n<p data-mce-fragment=\"1\"><span data-mce-fragment=\"1\" style=\"font-weight: 400;\" data-mce-style=\"font-weight: 400;\">1 day<\/span><\/p>\n<\/td>\n<td data-mce-fragment=\"1\">\n<p data-mce-fragment=\"1\"><span data-mce-fragment=\"1\" style=\"font-weight: 400;\" data-mce-style=\"font-weight: 400;\">3-5 days<\/span><\/p>\n<\/td>\n<\/tr>\n<\/tbody>\n<\/table>"
+            }
+          },
+          "content_xwgMTd": {
+            "type": "content",
+            "settings": {
+              "title": "What payment methods do you accept?",
+              "answer": "<p>We accept all major credit cards (VISA, Mastercard, AMEX) and PayPal payments. We do not accept personal checks, money orders, direct bank transfers, debit card payments, or cash on delivery.<\/p>",
+              "answer_html": ""
+            }
+          },
+          "content_WKTcDw": {
+            "type": "content",
+            "settings": {
+              "title": "Can I change my shipping address after placing an order?",
+              "answer": "<p>If you need to change your shipping address, please contact us at <a href=\"mailto:care@familygiftsco.com\"><em>care@familygiftsco.com<\/em><\/a> within 24 hours after placing your order with an e-mail titled \"Shipping Address Change\" to route to the appropriate department.<\/p><p>Please be advised that your shipping address cannot be revised after the order has shipped. <\/p>",
+              "answer_html": ""
+            }
+          },
+          "content_QDhaWt": {
+            "type": "content",
+            "settings": {
+              "title": "When will I get my tracking number?",
+              "answer": "<p>Once the order has been processed by our fulfillment team (5-7 days, on average), a tracking number usually takes 1-3 business days to be generated. Please take note to allow 1-3 business days for your tracking information to be updated. If you have not received your tracking number within three business days or if the tracking status is \"not available\" within 1-2 business days from the time you have received your tracking number, please send us an email at<a href=\"mailto:care@familygiftsco.com\"><em>care@familygiftsco.com<\/em><\/a><em>.<\/em><\/p>",
+              "answer_html": ""
+            }
+          },
+          "content_fQb8zT": {
+            "type": "content",
+            "settings": {
+              "title": "How do I track my order?",
+              "answer": "<p>You can track your order here: <a href=\"https:\/\/familygiftsco.com\/pages\/tracking\">https:\/\/familygiftsco.com\/pages\/tracking<\/a><\/p>",
+              "answer_html": ""
+            }
+          },
+          "content_eHiCer": {
+            "type": "content",
+            "settings": {
+              "title": "How do I return an item?",
+              "answer": "<p>At Family Gifts Co. your satisfaction as a customer is important to us. Therefore, all products come with our 90 Day 100% Happiness Guarantee. If you are not happy with your purchase within 90 days of receiving it, we will do our best to make sure you are happy with our resolution.  Understandably, because all of our products are personalized and can not be re-used, we do not accept returns. What we can do is send you a new, personalized product, or offer a refund after the original order has been delivered. Contact us at <a href=\"mailto:care@familygiftsco.com\">care@familygiftsco.com<\/a>, and we will promptly respond to your inquiries.<\/p>",
+              "answer_html": ""
+            }
+          },
+          "content_F8d6VP": {
+            "type": "content",
+            "settings": {
+              "title": "I need my order fast, do you guys provide expedited shipping?",
+              "answer": "<p>Absolutely! For faster delivery, you can select Faster or Fastest shipping. <\/p><p>Faster Shipping: 8-10 Day Delivery<\/p><p>Fastest Shipping: 6-8 Days Delivery<\/p><p><strong>When will I receive my refund?<\/strong><\/p><p>All refunds will be credited to your original form of payment. If you paid by credit or debit card, refunds will be sent to the card-issuing bank within 5-10 business days of receipt of the returned item or cancellation request. Please contact the card-issuing bank with questions about when the credit will be posted to your account.<\/p><p>If you haven't received a credit for your return yet, here's what to do: Contact the bank\/credit card company. It may take some time before the refund to you.<\/p>",
+              "answer_html": ""
+            }
+          },
+          "content_P6HFJ3": {
+            "type": "content",
+            "settings": {
+              "title": "Why the tracking status has not been updated?",
+              "answer": "<p>Tracking information may not update immediately in some cases, however, please rest assured your item is on its way. Here are some reasons why tracking information may not be available: - There may be delays between the scanning events and the website's updates.Once we have shipped the item, the tracking status will take a few days to be updated by the shipping carrier. Therefore, please hold on for a few more days and try again later.- The package may not be scanned until it reaches the regional hub near the destination. - There may not be any updates available when the package is in transit. The tracking information should pick up again once your packages reaches your local area.The delivery time frame is valid regardless of the tracking information's availability online. If your tracking status has not been updated for over 10 days, please contact us through our Customer Service email: <a href=\"mailto:care@familygiftsco.com\">care@familygiftsco.com<\/a>immediately and we will offer you further assistance.<\/p>",
+              "answer_html": ""
+            }
+          }
+        },
+        "block_order": [
+          "content_itTiBb",
+          "content_qhtxL6",
+          "content_xwgMTd",
+          "content_WKTcDw",
+          "content_QDhaWt",
+          "content_fQb8zT",
+          "content_eHiCer",
+          "content_F8d6VP",
+          "content_P6HFJ3"
+        ],
+        "settings": {
+          "title": "FAQ",
+          "width": "standard",
+          "padding_top": 56,
+          "padding_bottom": 56,
+          "animation": "none",
+          "padding_top_mobile": 56,
+          "padding_bottom_mobile": 56,
+          "css_class": "",
+          "custom_css": ""
+        }
       }
     },
     "content_for_index": [

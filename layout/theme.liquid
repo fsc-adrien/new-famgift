@@ -1,7 +1,13 @@
+{%- comment %}<locksmith:d654>{% endcomment -%}
+  {% comment %} {%- include 'locksmith' -%} {% endcomment %}
+{%- comment %}</locksmith:d654>{% endcomment -%}
 {% capture content %}
 <!doctype html>
 <html class="no-js no-touch" lang="{{ shop.locale }}">
 <head>
+  {% comment %} {{ locksmith_initializations }} {% endcomment %}
+  {% render 'replo-head' %}
+
   <script>
     window.Store = window.Store || {};
     window.Store.id = {{ shop.id }};
@@ -17,7 +23,11 @@
 
   {%- if current_tags -%}{%- assign meta_tags = current_tags | join: ', ' -%}{%- endif -%}
   <title>{%- if template.name == "index" -%}{{ page_title }}{%- else -%}{{ page_title }}{% if current_tags %} {{ 'general.meta.tagged_html' | t: tags: meta_tags }}{%- endif -%}{% if current_page != 1 %} {{ 'general.meta.page' | t: page_number: current_page }}{% endif %}{% unless page_title contains shop.name %} - {{ shop.name }}{% endunless %}{% endif %}</title>
-  
+    <script>
+      /* >> TriplePixel :: start*/
+      window.TriplePixelData={TripleName:"familygiftsco.myshopify.com",ver:"2.12",plat:"SHOPIFY",isHeadless:false},function(W,H,A,L,E,_,B,N){function O(U,T,P,H,R){void 0===R&&(R=!1),H=new XMLHttpRequest,P?(H.open("POST",U,!0),H.setRequestHeader("Content-Type","text/plain")):H.open("GET",U,!0),H.send(JSON.stringify(P||{})),H.onreadystatechange=function(){4===H.readyState&&200===H.status?(R=H.responseText,U.includes(".txt")?eval(R):P||(N[B]=R)):(299<H.status||H.status<200)&&T&&!R&&(R=!0,O(U,T-1,P))}}if(N=window,!N[H+"sn"]){N[H+"sn"]=1,L=function(){return Date.now().toString(36)+"_"+Math.random().toString(36)};try{A.setItem(H,1+(0|A.getItem(H)||0)),(E=JSON.parse(A.getItem(H+"U")||"[]")).push({u:location.href,r:document.referrer,t:Date.now(),id:L()}),A.setItem(H+"U",JSON.stringify(E))}catch(e){}var i,m,p;A.getItem('"!nC`')||(_=A,A=N,A[H]||(E=A[H]=function(t,e,a){return void 0===a&&(a=[]),"State"==t?E.s:(W=L(),(E._q=E._q||[]).push([W,t,e].concat(a)),W)},E.s="Installed",E._q=[],E.ch=W,B="configSecurityConfModel",N[B]=1,O("https://conf.config-security.com/model",5),i=L(),m=A[atob("c2NyZWVu")],_.setItem("di_pmt_wt",i),p={id:i,action:"profile",avatar:_.getItem("auth-security_rand_salt_"),time:m[atob("d2lkdGg=")]+":"+m[atob("aGVpZ2h0")],host:A.TriplePixelData.TripleName,plat:A.TriplePixelData.plat,url:window.location.href,ref:document.referrer,ver:A.TriplePixelData.ver},O("https://api.config-security.com/event",5,p),O("https://whale.camera/live/dot.txt",5)))}}("","TriplePixel",localStorage);
+      /* << TriplePixel :: end*/
+      </script>
     <!-- anti-flicker snippet (recommended)  -->
   <style>.async-hide { opacity: 0 !important} </style>
   <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
@@ -77,7 +87,6 @@
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
   })(window, document, "clarity", "script", "ikhs1psz0s");
   </script>
-
 
   {% if settings.show_multiple_currencies or shop.enabled_currencies.size > 1 or localization.available_countries.size > 1 %}
     <link rel="preload" href="/services/javascripts/currencies.js" as="script">
@@ -194,6 +203,44 @@
   {% if template contains 'collection' %}
     {% section 'filter-menu-settings' %}
   {% endif %}
+{% comment %}   
+  <script id="sg-js-global-vars">
+    sgGlobalVars = {{ shop.metafields['sg-cc']['sg-metafield'] | json }};
+    if(sgGlobalVars) {
+        sgGlobalVars.cart = {{ cart | json }};
+        sgGlobalVars.currentProduct = {{ product | json }};
+        sgGlobalVars.isAdmin = {% if content_for_header contains 'adminBarInjector' or content_for_header contains 'previewBarInjector' %}true{% else %}false{% endif %};
+    }
+</script>
+
+<!-- Warning: Do not remove. This is used for CartHook Checkout Replacement -->
+  {% capture the_snippet_content %}{% include 'carthook-checkout' %}{% endcapture %}
+  {% unless the_snippet_content contains "Liquid error" %}{% include 'carthook-checkout' %}{% endunless %}
+{% include "trackify_x" %}
+
+  {% render 'digismoothie-giftbox' %}
+<meta name="google-site-verification" content="1KA58mqGE3PSYu7LQXHGRm1Y6asJXGHP-xqyPYrezrU" />
+{% include 'hulk_po_vd' %}
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "gjwtv1mo72");
+</script>
+
+{{ shop.metafields.loox["global_html_head"] }}
+
+<!-- Clarity -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "ikhs1psz0s");
+</script>
+ {% endcomment %}
+
 </head>
 
 {%- capture money_format_output -%}

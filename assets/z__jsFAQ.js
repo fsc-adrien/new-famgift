@@ -2,9 +2,9 @@
 var __webpack_exports__ = {};
 window.PXUTheme.jsFAQ = {
   init() {
-    const $faqHeading = $('.faq-accordion > dt > button');
+    const $faqHeading = $('.faq-accordion > div > dt > button');
 
-    $('.faq-accordion > dd').attr('aria-hidden', true);
+    $('.faq-accordion div > dd > ').attr('aria-hidden', true);
 
     $faqHeading.attr('aria-expanded', false);
 
@@ -30,8 +30,8 @@ window.PXUTheme.jsFAQ = {
     });
   },
   unload() {
-    $('.faq-accordion > dt > button').off('click activate');
-    $('.faq-accordion > dt > button').off('keydown');
+    $('.faq-accordion > div > dt > button').off('click activate');
+    $('.faq-accordion > div > dt > button').off('keydown');
   },
 };
 

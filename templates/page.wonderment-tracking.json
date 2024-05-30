@@ -1,0 +1,185 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-content__main",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_alignment": "left",
+        "width": "standard",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_heading_3fnaKn": {
+      "type": "index__heading",
+      "disabled": true,
+      "settings": {
+        "preheading": "",
+        "title": "Section heading",
+        "subheading": "",
+        "heading_alignment": "center",
+        "vertical_spacing": "medium",
+        "preheading_color": "rgba(0,0,0,0)",
+        "heading_color": "rgba(0,0,0,0)",
+        "subheading_color": "rgba(0,0,0,0)",
+        "background": "rgba(0,0,0,0)",
+        "gradient": "rgba(0,0,0,0)",
+        "gradient_rotation": 0,
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "none",
+        "mobile_text_alignment": "none",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_html_EeB9aT": {
+      "type": "index__html",
+      "settings": {
+        "html_content": "<div class=\"heading-wrapper--page\n            heading-wrapper\n            heading-wrapper--vertical\n            one-whole column\n            is-flex\n            is-flex-column\n            is-align-center\n            text-align-center\"> <h1 class=\"page__title title\">\n    \n\n      Track your order<\/h1>\n  \n<\/div>",
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "none",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "1717105285e7729914": {
+      "type": "apps",
+      "blocks": {
+        "wonderment_wonder_block_ETkGWV": {
+          "type": "shopify:\/\/apps\/wonderment\/blocks\/wonderBlock\/89d63369-6ee7-4097-ac41-8229c6f90001",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "wonderment_wonder_block_ETkGWV"
+      ],
+      "settings": {
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_faq_HnmWqW": {
+      "type": "index__faq",
+      "blocks": {
+        "content_RpRrpj": {
+          "type": "content",
+          "settings": {
+            "title": "When will my order arrive?",
+            "answer": "<h3>When will my order arrive?<\/h3><p><span style=\"text-decoration:underline\"><em>Free \/ Standard Shipping:<\/em><\/span> <\/p><p>Average delivery times are currently 10-14 days from the order date.<\/p><p>This includes about 7-9 days to create your order, and 3-5 days to deliver via UPS, USPS, or Fedex.<\/p><p><span style=\"text-decoration:underline\"><em>Faster Shipping<\/em><\/span><em>: <\/em>Average delivery times are currently 8-10 days (typically via UPS 2 Day Shipping).<\/p><p><span style=\"text-decoration:underline\"><em>Fastest Shipping:<\/em><\/span>Average delivery times are currently 6-8 days (typically via UPS Next Day Shipping).<\/p><p><span style=\"text-decoration:underline\"><em>Last Minute Shipping:<\/em><\/span>Average delivery times are currently 4-6 days (typically via UPS Next Day Shipping).<\/p><p><span style=\"text-decoration:underline\"><em>Custom Commission products<\/em><\/span><em>:<\/em> typically take 15-20 days for delivery as they may require multiple revision rounds between you and our team to ensure you are 100% happy with your order.<\/p>",
+            "answer_html": ""
+          }
+        },
+        "content_MaD4tH": {
+          "type": "content",
+          "settings": {
+            "title": "Why the tracking status has not been updated?",
+            "answer": "<p>Tracking information may not update immediately in some cases, however, please rest assured your item is on its way. Here are some reasons why tracking information may not be available: - There may be delays between the scanning events and the website's updates.Once we have shipped the item, the tracking status will take a few days to be updated by the shipping carrier. Therefore, please hold on for a few more days and try again later.- The package may not be scanned until it reaches the regional hub near the destination. - There may not be any updates available when the package is in transit. The tracking information should pick up again once your packages reaches your local area.<\/p>",
+            "answer_html": ""
+          }
+        },
+        "content_cdTWmV": {
+          "type": "content",
+          "settings": {
+            "title": "How do I return an item?",
+            "answer": "<p>At Family Gifts Co. your satisfaction as a customer is important to us. Therefore, all products come with our 90 Day 100% Happiness Guarantee. If you are not happy with your purchase within 90 days of receiving it, we will do our best to make sure you are happy with our resolution.  Understandably, because all of our products are personalized and can not be re-used, we do not accept returns. What we can do is send you a new, personalized product, or offer a refund after the original order has been delivered. Contact us at <a href=\"mailto:care@familygiftsco.com\">care@familygiftsco.com<\/a>, and we will promptly respond to your inquiries.<\/p>",
+            "answer_html": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_RpRrpj",
+        "content_MaD4tH",
+        "content_cdTWmV"
+      ],
+      "settings": {
+        "title": "FAQs",
+        "width": "standard",
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "animation": "none",
+        "padding_top_mobile": 56,
+        "padding_bottom_mobile": 56,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_featured_collection_TQK3jc": {
+      "type": "index__featured-collection",
+      "settings": {
+        "title": "You May Also Like",
+        "collection": "hot-sellers",
+        "products_per": 4,
+        "products_limit": 8,
+        "align_height": false,
+        "collection_height": 200,
+        "button_label": "Shop All",
+        "button_style": "button--secondary",
+        "collection_style": "grid",
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "collection_layout_mobile": "grid",
+        "mobile_products_per_row": "2",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 0,
+        "css_class": "",
+        "custom_css": ".featured-collection .one-fourth:nth-child(n+5) {\n    display: none; \n}"
+      }
+    },
+    "index_featured_collection_RDFKrG": {
+      "type": "index__featured-collection",
+      "settings": {
+        "title": "",
+        "collection": "hot-sellers",
+        "products_per": 4,
+        "products_limit": 8,
+        "align_height": false,
+        "collection_height": 200,
+        "button_label": "",
+        "button_style": "button--primary",
+        "collection_style": "grid",
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "collection_layout_mobile": "grid",
+        "mobile_products_per_row": "1",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20,
+        "css_class": "",
+        "custom_css": ".featured-collection .one-fourth:nth-child(-n+4) {\n    display: none; \n}"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "index_heading_3fnaKn",
+    "index_html_EeB9aT",
+    "1717105285e7729914",
+    "index_faq_HnmWqW",
+    "index_featured_collection_TQK3jc",
+    "index_featured_collection_RDFKrG"
+  ]
+}

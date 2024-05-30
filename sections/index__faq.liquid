@@ -88,12 +88,18 @@
 >
   <div class="container">
     {% if section.settings.title != blank %}
-      {%
+      {% comment %} {%
         render 'heading',
         title: section.settings.title,
         heading_tag: 'h2',
         context: 'faq',
         text_alignment: 'left',
+      %} {% endcomment %}
+      {% render 'heading',
+        title: section.settings.title,
+        heading_tag: 'h1',
+        context: 'page',
+        text_alignment: 'center'
       %}
     {% endif %}
 
@@ -130,32 +136,39 @@
             class="
               {{ section.settings.css_class }}
               faq-accordion
+              container
               accordion-icon--{{ settings.toggle_icon_style }}
             "
           >
             {% for block in section.blocks %}
               {% if block.type == 'content' %}
                 {% if block.settings.title != blank %}
-                  <dt>
-                    <button
-                      class="
-                        accordion-style--{{ settings.toggle_icon_style }}
-                        accordion__button
-                      "
-                      type="button"
-                      aria-controls="panel-{{ block.id }}"
-                      aria-expanded="true"
-                    >
-                      {{ icon_set }}
-                      {{ block.settings.title }}
-                    </button>
-                  </dt>
+                  <div class="one-third column has-padding-bottom has-padding-top">
+                    <dt>
+                      <button
+                        class="
+                          accordion-style--{{ settings.toggle_icon_style }}
+                          accordion__button
+                        "
+                        type="button"
+                        aria-controls="panel-{{ block.id }}"
+                        aria-expanded="true"
+                      >
+                        {{ block.settings.title }}
+                        {{ icon_set }}
+                      </button>
+                    </dt>
 
-                  <dd id="panel-{{ block.id }}" aria-hidden="false">
-                    <div class="content">
-                      {{- block.settings.answer -}}
-                    </div>
-                  </dd>
+                    <dd id="panel-{{ block.id }}" aria-hidden="false">
+                      <div class="content">
+                        {% if block.settings.answer_html != blank  %}
+                          {{- block.settings.answer_html -}}
+                        {% else %}
+                          {{- block.settings.answer -}}
+                        {% endif %}
+                      </div>
+                    </dd>
+                  </div>
                 {% endif %}
               {% elsif block.type == 'heading' %}
                 {% if block.settings.title != blank %}
@@ -349,6 +362,11 @@
             "id": "answer",
             "label": "Answer",
             "default": "<p>Provide the answer to the question here.</p>"
+          },
+          {
+            "type": "html",
+            "id": "answer_html",
+            "label": "Answer as HTML"
           }
         ]
       },

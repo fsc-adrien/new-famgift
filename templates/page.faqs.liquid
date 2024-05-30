@@ -1,4 +1,6 @@
-<div class="Main__layout Container Container--narrow" data-layout="full">
+{%  section 'index__faq' %}
+
+{% comment %} <div class="Main__layout Container Container--narrow" data-layout="full">
   <header class="Main__header">
     <h1>{{ page.title }}</h1>
   </header>
@@ -12,7 +14,10 @@
                 {% assign p = part | append: " " | split: "</h4>" | last | strip_html | replace: "&nbsp;", "" | replace: " ", "" | strip_newlines %}
                 {% if part contains "</h4>" %}
                     {% if p != "" or fp contains "<img " or fp contains "<iframe " %}
-                        <section class="Entry Entry--faq Collapse" data-component="Collapse">
+                        <dt class="Entry Entry--faq Collapse" accordion__button data-component="Collapse" 
+                        type="button"
+                        aria-controls="panel-{{ block.id }}"
+                        aria-expanded="true">
                             {% assign remove = part | split: ">" | first | append: ">" %}
                             <h4 class="Entry__title Collapse__toggle">
                               <span>{{ part | split: "</h4>" | first | strip_html | replace: remove, "" }}</span>
@@ -28,11 +33,12 @@
                                 {{ part | split: "</h4>" | last | replace: "<div", "<span" | replace: "</div", "</span" }}
                               </div>
                             </div>
-                        </section>
+                        </dt>
                     {% endif %}
                 {% endif %}
             {% endfor %}
         {% endif %}
     </div>
   </main>
-</div>
+</div> {% endcomment %}
+
