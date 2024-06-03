@@ -3,6 +3,13 @@
     "main": {
       "type": "page-content__main",
       "settings": {
+        "show_heading": true,
+        "heading_alignment": "left",
+        "width": "standard",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "css_class": "",
+        "custom_css": "h1 {\n    font-size: calc(1.485rem + 2.115vw);\n}"
       }
     }
   },

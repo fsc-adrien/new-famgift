@@ -67,7 +67,7 @@
         "product_height": 500,
         "video_looping": false,
         "gallery_arrows": false,
-        "enable_zoom": false,
+        "enable_zoom": true,
         "enable_product_lightbox": false,
         "slideshow_speed": 0,
         "slideshow_transition": "slide",

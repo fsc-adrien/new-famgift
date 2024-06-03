@@ -29,7 +29,7 @@
     "thumbnail_hover_enabled": false,
     "thumbnail_text_alignment": "left",
     "stickers_enabled": false,
-    "display_product_quantity": true,
+    "display_product_quantity": false,
     "product_form_style": "radio",
     "enable_swatches": false,
     "swatch_style": "square",

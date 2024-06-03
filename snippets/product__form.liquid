@@ -224,6 +224,8 @@
           {% endif %}
         </p>
       {% endif %}
+      
+      {% render 'product-customizer' %}
 
       <div class="purchase-details has-quantity-box-{{ settings.display_product_quantity }}">
         {% unless show_payment_button %}
@@ -537,6 +539,7 @@
             %}
           </div>
         {% endif %}
+
 
         {% if show_payment_button %}
           {% comment %}Inject @pixelunion/pxs-gift-card-recipient-form/recipient-form begin{% endcomment %}

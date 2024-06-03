@@ -113,13 +113,13 @@
       "settings": {
         "title": "FAQs",
         "width": "standard",
-        "padding_top": 56,
-        "padding_bottom": 56,
+        "padding_top": 20,
+        "padding_bottom": 20,
         "animation": "none",
-        "padding_top_mobile": 56,
-        "padding_bottom_mobile": 56,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
         "css_class": "",
-        "custom_css": ""
+        "custom_css": ".one-third.column.has-padding-bottom.has-padding-top {\n    width: 100%;\n    padding: 0;\n}\n.one-third.column.has-padding-bottom.has-padding-top button  {\n    padding-left: 0;\n}\n\n.one-third.column.has-padding-bottom.has-padding-top button span {\n    left: unset;\n    right: 0;\n    color: #000;\n}\n\n.heading-wrapper--page.heading-wrapper.heading-wrapper--vertical.one-whole.column.is-flex.is-flex-column {\n    margin-left: 20px;\n    text-align: left;\n    align-items: start;\n    margin-bottom: 0;\n}\n\n.heading-wrapper--page.heading-wrapper.heading-wrapper--vertical.one-whole.column.is-flex.is-flex-column h1 {\n    font-size: 35px;\n}"
       }
     },
     "index_featured_collection_TQK3jc": {
